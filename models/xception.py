@@ -9,8 +9,8 @@ ROOT = config.get('training-parameters', 'seed')
 TARGET_SIZE = (target_h, target_w, 3)
 
 
-def get_densenet169() -> tf.keras.models.Model:
-    model = tf.keras.applications.densenet.DenseNet169(
+def get_xception() -> tf.keras.models.Model:
+    model = tf.keras.applications.xception.Xception(
         include_top=False,
         weights="imagenet",
         input_tensor=None,

@@ -1,6 +1,6 @@
 import tensorflow as tf
 from util.loader import get_train_gen, get_valid_gen
-from models.densenet169 import get_densenet
+from models.densenet169 import get_densenet169
 from util.loss import WeightedBinaryCrossEntropy
 from util.metric import get_metrics
 from logs.callbacks.callbacks import get_callbacks
@@ -28,7 +28,7 @@ df = pd.read_csv(f'{ROOT}/train_labeled_studies.csv',
 
 train_gen = get_train_gen()
 valid_gen = get_valid_gen()
-model = get_densenet()
+model = get_densenet169()
 initializer = tf.keras.initializers.he_normal(seed=SEED)
 
 model.trainable = True
