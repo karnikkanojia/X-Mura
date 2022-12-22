@@ -1,10 +1,8 @@
-import tensorflow as tf
 from tensorflow.keras.losses import Loss
 from tensorflow.keras.backend import binary_crossentropy, mean
 import numpy as np
 import pandas as pd
 import configparser
-import sys
 
 config = configparser.ConfigParser(allow_no_value=True)
 config.read('config.ini')
