@@ -39,6 +39,10 @@ def preprocessing_fn(image):
 
 data_gen_args = dict(
     rescale=1./255.,
+    rotation_range=30,
+    horizontal_flip=True,
+    vertical_flip=True,
+    fill_mode='reflect',
     preprocessing_function=preprocessing_fn
 )
 
