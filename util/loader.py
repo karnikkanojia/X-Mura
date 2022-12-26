@@ -43,12 +43,12 @@ data_gen_args = dict(
     horizontal_flip=True,
     vertical_flip=True,
     fill_mode='reflect',
-    preprocessing_function=preprocessing_fn
+    preprocessing_function=preprocessing_fn,
+    featurewise_center=True,
+    featurewise_std_normalization=True
 )
 
 datagen = tf.keras.preprocessing.image.ImageDataGenerator(**data_gen_args)
-
-#! datagen.fit()
 # Run datagen.fit() if the datagen args
 # Only required if featurewise_center or featurewise_std_normalization or zca_whitening are set to True
 
@@ -61,7 +61,8 @@ def get_train_gen():
                                        class_mode=CLASS_MODE,
                                        batch_size=BATCH_SIZE,
                                        x_col='Image',
-                                       y_col='Label')
+                                       y_col='Label',
+                                       save_to_dir='preprocess')
 
 def get_valid_gen():
     global datagen
